@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>上传中心</title>
+</head>
+<style type="text/css">
+#e{
+border:1px solid #000;
+background: #840000;
+height:110px;
+	}
+a {
+	text-decoration:none;
+	color:#FFF;
+	font-size:28px;
+	font:黑体;
+   }
+#l{
+	float:left;
+	}
+#k{
+	float:right;
+	margin:30px;
+	}
+.p{
+	float:黑体;
+	font-size:30px;
+	}
+.o{
+	color:#F00;
+	}
+a.aa:hover{
+	font-size:36px;
+	background-color:#F99;
+	}
+.m{
+	font:黑体;
+	font-size:28px;
+	}
+.v{
+	padding-left:270px;
+	}
+.c{
+	color:#F00;
+	}
+.t{
+	font:黑体;
+	}
+.y{
+	float:right;
+	}
+</style>
+
+<body bgcolor="#FFECE3">
+<div id="e">
+ <div id="l"><tr><img src="图片素材/二维码.png">&nbsp;&nbsp;<a href="https://yys.163.com/index.html"><img src="图片素材/tubiao.png"></a><a href="https://yys.163.com/index.html"><img src="图片素材/阴阳师.png"></a></tr></div>
+ <div id="k">
+<td><a href="Untitled-1.html" class="aa">活动首页</a></td>
+<td><a href="Untitled-2.html" class="aa">活动规则</a></td>
+<td><a href="#" class="aa">个人中心</a></td>
+<td><a href="#" class="aa">上传中心</a></td>
+</div>
+</div>
+<img src="图片素材/4JLXR%1_2KP@CV1NN)ED[]L.png">
+<div>
+<table align="center">
+<tr>
+<td class="p"><strong>请上传你的原创参赛稿图片。</strong></td>
+</tr>
+<tr>
+<td>投稿作品必须为自身原创设计，投稿无效图片（例如：其他游戏/动漫图片、阴阳师游戏中原有设计图、其他无关图片/照片等），将可能永久取消参赛及获奖资<br><br>格。（完整详情请见【 活动规则 】） 
+<br><br>单张上传2M以内，png，jpg，jpeg格式，每个阴阳师大人作品最多可以上传5张图</td>
+</tr>
+<tr>
+<td class="o">注意：作品一经提交不可修改，请各位阴阳师大人提交之前做好充分的确认！</td></tr>
+</table>
+</div>
+<br>
+<br>
+<br>
+<div class="v">
+<table>
+<tr>
+<td width="100px">&nbsp;</td>
+<td class="m"><strong>作品信息</strong></td>
+<td width="300px">&nbsp;</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<td width="100px">&nbsp;</td>
+<td class="t"><strong>作者名称:</strong><input class="title" type="text" placeholder="必填"></td>
+
+</tr>
+<tr>
+<td width="100px">&nbsp;</td>
+<td class="t"><strong>作品介绍:</strong></td>
+</tr>
+<tr>
+<td><td><textarea style="border::0; border-radius:5px; background-color::rgba(241,241,241,98); width:355px; height:100px; padding:10px; resize:none;" placeholder="选填" maxlength="250"></textarea></td></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td class="t"><strong>上传作品:</strong></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td class="c">注意：第一张请上传主要视觉图</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><input id="upload" type="file" name="fpfile" multiple accept="image/jpeg, image/png"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td class="y"><a href="#"><img src="图片素材/提交.png" width="150px;"></a></td>
+</tr>
+</table>
+</div>
+<div>
+<table>
+<tr>
+<td>&nbsp;</td>
+<td><input id="b1" type="button" value="增加一幅图片" onClick="newNode()" /></td></tr>
+<tr><td></td>
+<td><input id="b2" type="button" value="复制原图" onClick="copyNode()" /></td></tr><br>
+<tr><td><img src="images/sixty1.jpg" id="sixty1" alt="男神" /></td>
+<td><img src="images/sixty2.jpg" id="sixty2" alt="二哈" /></td></tr>
+</table>
+</div>
+</body>
+<img src="图片素材/脚图.png">
+</html>
+<script type="text/javascript">
+function newNode(){
+	var oldNode = document.getElementById("sixty1");
+	var image = document.createElement("img");
+	image.setAttribute("src","images/newimg.jpg");
+	document.body.insertBefore(image,oldNode);
+	}
+function copyNode(){
+	var image = document.getElementById("sixty1");
+	var copyImage = image.cloneNode(false);
+	document.body.appendChild(copyImage);
+	}
+    </script>

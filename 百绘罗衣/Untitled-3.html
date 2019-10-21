@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人中心</title>
+</head>
+<style type="text/css">
+#e{
+border:1px solid #000;
+background: #840000;
+height:110px;
+	}
+a {
+	text-decoration:none;
+	color:#FFF;
+	font-size:28px;
+	font:黑体;
+   }
+#l{
+	float:left;
+	}
+li{
+	list-style:none;
+	}
+#v{
+	text-align:center;
+	}
+#k{
+	float:right;
+	margin:30px;
+	}
+#t{
+	font-size:18px;
+	font:黑体;
+	}
+.q{
+	text-align:right;
+	}
+
+.hr_1{
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	height:35px;
+	border-bottom-width:2px;
+	border-bottom-style:solid;
+	border-bottom-color:#999;
+	vertical-align: bottom;
+	padding-left:12px;
+	}
+.left{
+	text-align:right;
+	width:80px;
+	height:25px;
+	padding-right:5px;
+	}
+.inputClass{
+	width:130px;
+	height:16px;
+	border:solid 1px #999;
+	}
+.center{
+	width:135px;
+	}
+a.aa:hover{
+	font-size:36px;
+	background-color:#F99;
+	}
+</style>
+<script type="text/javascript">
+ function $ (elementId){
+	 return document.getElementById(elementId);
+	 }
+ function checkUser(){
+	 var user = $ ("user").value;
+	 var userId = $ ("user_prompt");
+	 userId.innerHTML="";
+	 if(user.length<4 || user.length>16)
+	 {
+		 userId.innerHTML="请输入4-16位用户名";
+		 return false;
+		 }
+	for(var i=0;i<user.length;i++){
+		if(!isNaN(user.charAt(i))){
+			userId.innerHTML="用户名中不能包含数字";
+		    return false;
+			}
+		}
+		return true;
+	 }
+ function checkPwd(){
+	 var pwd = $ ("pwd").value;
+	 var pwdId = $ ("pwd_prompt");
+	  pawId.innerHTML="";
+	  if(pwd.length<4 || pwd.length>10)
+	  {
+		  pawId.innerHTML="密码长度在4-10之间";
+		  return false;
+		  }
+		  return true;	 
+	 }
+ function checkRepwd(){
+	 var repwd = $ ("repwd").value;
+	 var pwd = $ ("pwd").value;
+	 var repwdId = $ ("repwd_prompt");
+	 repwdId.innerHTML="";
+	 if(pwd!=repwd){
+		 repwdId.innerHTML="两次输入密码不一致";
+		 return false;
+		 }
+		 return true;
+	 }
+ function checkEmail(){
+	 var email = $ ("email").value;
+	 var eamil_prompt = $ ("eamil_prompt");
+	 eamil_prompt.innerHTML="";
+	 var index = email.indexOf("@",1);
+	 if(index == -1){
+		 eamil_prompt.innerHTML="输入的邮箱格式中应包含‘@’符号";
+		 return false;
+		 }
+	 if(email.indexOf('.',index) ==-1){
+		 eamil_prompt.innerHTML="输入的邮箱格式中应包含‘。’符号且在‘@’符号后面";
+		 return false;
+		 }
+		 return true;
+	 }
+ function checkMobile(){
+	 var mobile = $ ("mobile").value;
+	 var mobileId = $ ("mobile_prompt");
+	 mobileId.innerHTML="";
+	 if(mobile.length<0 || mobile.length>1)
+	  {
+		 mobileId.innerHTML="电话号码应为13位";
+		  return false;
+		  }
+	 if(mobile.charAt(0)!=1){
+		 mobileId.innerHTML="手机号开始应为1";
+		 return false;
+		 }
+	 for(var i = 0;i<mobile.length;i++){
+		 if(isNaN(mobile.charAt(i)))
+		 {
+			 mobileId.innerHTML="手机号码不能包含字符";
+			 return false;
+			 }
+		 }
+		 return true;
+ }
+ var H;
+function openwindow(){
+	H=window.open("Untitled-4.html","","width:500","height:500");	
+}
+
+</script>
+
+
+<body bgcolor="#FFEFE8">
+<div id="e">
+ <div id="l"><tr><img src="图片素材/二维码.png">&nbsp;&nbsp;<a href="https://yys.163.com/index.html"><img src="图片素材/tubiao.png"></a><a href="https://yys                                                                                                                           .163.com/index.html"><img src="图片素材/阴阳师.png"></a></tr></div>
+<div id="k">
+<td><a href="Untitled-1.html" class="aa">活动首页</a></td>
+<td><a href="Untitled-2.html" class="aa">活动规则</a></td>
+<td><a href="Untitled-3.html" class="aa">个人中心</a></td>
+<td><a href="Untitled-4.html"class="aa">上传中心</a></td>
+</div>
+</div>
+<img src="图片素材/4JLXR%1_2KP@CV1NN)ED[]L.png"><br>
+<div align="center">
+<img src="图片素材/reg_title_404ee4e.png">
+</div>
+
+<div>
+<form action="" method="post" name="myform">
+<table align="center"bgcolor="#FFEFE8">
+<tr>
+<td class="hr_1">新用户注册</td>
+</tr>
+<tr>
+<td class="left">用户名:</td><br>
+<td class="center"><input id="user" type="text"  onBlur="checkUser()" class="inputClass" maxlength="16" /></td>
+<td width="400px;"><div id="user_prompt">用户名由4-16位字符组成，不能包含数字</div></td>
+</tr>
+<tr>
+<td class="left">密码:</td>
+<td class="center"><input id="pwd" type="password" onBlur="checkPwd()" class="inputClass" maxlength="10" /></td>
+<td><div id="pwd_prompt">密码由4-10位字符组成</div></td>
+</tr>
+<tr>
+<td class="left">确认密码:</td>
+<td class="center"><input id="repwd" type="password" onBlur="checkRepwd()" class="inputClass" maxlength="10" /></td>
+<td><div id="repwd_prompt"></div></td>
+</tr>
+<tr>
+<td class="left">电子邮箱:</td> 
+<td class="center"><input id="email" type="text" onBlur="checkEmail()" class="inputClass" /></td>
+<td><div id="eamil_prompt">邮箱格式示例:web@126.com</div></td>
+</tr>
+<tr>
+<td class="left">手机号码:</td>
+<td class="center"><input id="mobile" type="text" onBlur="checkMobile()" class="inputClass" /></td>
+<td><div id="mobile_prompt"></div></td>
+</tr>
+<tr>
+<td class="left">&nbsp;</td>
+<td class="center"><input name="" type="image" src="图片素材/上传作品.png" onClick="openwindow()" /></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="left">&nbsp;</td>
+<td class="center"><input name="重置" type="reset" class="btn" style="width:200px; height:30px;" value="重     置" /></td>
+</tr>
+<tr>
+<tr class="left">&nbsp;</tr>
+<td class="q"><input id="agreedToPrivacyPolicy" name="agreedToPrivacyPolicy" type="checkbox"/></td>
+ <td><span class="z">我已阅读并接受隐私政策</span></td>
+</tr>
+</table>
+</form>
+</div>
+<img src="图片素材/脚图.png">
+</body>
+</html>
